@@ -1,0 +1,39 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.header {
+  min-height: 50px;
+  background-color: #d6e6f2;
+  position: sticky;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.app-navigator {
+  display: flex;
+  align-items: center;
+}
+
+.app-navigator ul {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.app-navigator ul li {
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-add {
+  background-color: #769fcd;
+  color: #ffffff;
+}
+
+.btn-row {
+  display: flex;
+  height: 50px;
+  width: 200px;
+  align-items: center;
+  justify-content: space-around;
+}
