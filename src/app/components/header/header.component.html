@@ -1,15 +1,16 @@
 <div class="header">
   <div class="logo">{{ title }}</div>
-  <app-filter-items></app-filter-items>
   <nav class="app-navigator">
       <ul *ngFor='let item of navigationItems'>
         <li>
-          <a class="" href="#">{{item}}</a>
+          <a [routerLink]="[item.path]">{{item.name}}</a>
         </li>
       </ul>
   </nav>
   <div class="btn-row">
-    <div ><a href='#'>Sign in</a></div>
-    <button class="btn btn-add btn-outline-light">Add Product</button>
+    <div ><a routerLink='/signin'>Sign in</a></div>
+    <a routerLink='/new'>
+      <button class="btn btn-add btn-outline-light">Add Product</button>
+    </a>
   </div>
 </div>

@@ -4,19 +4,27 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer-comp.component';
 import { MenuPageModule } from './pages/menu-page/menu-page.module';
 import { DetailsPageComponent } from './pages/details-page/details-page.component';
-import { FilterItemsComponent } from './header/filter-items/filter-items.component';
-import { AddEditModalComponent } from './modals/add-edit-modal/add-edit-modal.component';
- 
+import { ItemService } from '../core/services/item.service';
+import { AddEditPageModule } from './pages/add-edit-page/add-edit-page.module';
+import { RouterModule } from '@angular/router';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { SignInPageComponent } from './pages/sign-in-page/sign-in-page.component';
+
 @NgModule({
     declarations: [
       HeaderComponent,
       FooterComponent,
       DetailsPageComponent,
-      FilterItemsComponent,
-      AddEditModalComponent
+      HomePageComponent,
+      SignInPageComponent
     ],
-    imports: [CommonModule, MenuPageModule],
-    providers: [],
+    imports: [
+      CommonModule,
+      MenuPageModule,
+      AddEditPageModule,
+      RouterModule
+    ],
+    providers: [ItemService],
     exports: [
       HeaderComponent,
       FooterComponent,

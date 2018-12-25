@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+  <form [formGroup]='productForm' (ngSubmit)='onSubmit()'>
+    <div class="form-group">
+      <label for="item-name">Name</label>
+      <input
+        type="text"
+        formControlName="itemName"
+        name="itemName"
+        class="form-control"
+        id="item-name"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="item-price">Price</label>
+      <input
+        formControlName="price"
+        name="item-price"
+        class="form-control"
+        id="item-price"
+      >
+    </div>
+
+    <div class="form-group">
+        <label for="item-type">Type</label>
+        <input
+          formControlName="type"
+          name="item-type"
+          class="form-control"
+          id="item-type"
+        >
+      </div>
+
+    <button class="btn btn-success">Confirm</button>
+  </form>
+</div>

@@ -1,3 +1,7 @@
-<div *ngFor='let product of menu'>
-  <app-menu-item [item]='product'></app-menu-item>
+<app-filter-items></app-filter-items>
+<div class="products-container">
+  <div *ngFor='let product of menu'>
+    <app-menu-item [item]='product' [deleteItem]='deleteItem'></app-menu-item>
+  </div>
 </div>
+  

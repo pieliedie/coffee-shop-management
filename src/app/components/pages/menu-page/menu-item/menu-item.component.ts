@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-menu-item',
@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MenuItemComponent implements OnInit {
 
   @Input() item: Object = {};
-
+  @Output() deleteItem: EventEmitter<number> = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit() {

@@ -1,0 +1,8 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.main {
+    margin: 0 auto;
+    max-width: 60em;
+    min-height: 90vh;
+    padding-top: 50px;
+  }

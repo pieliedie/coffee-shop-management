@@ -1,0 +1,10 @@
+.products-container {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.products-container>* {
+  margin: 10px;
+}

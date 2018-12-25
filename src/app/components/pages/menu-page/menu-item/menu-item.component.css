@@ -1,0 +1,21 @@
+section {
+  width: 200px;
+  border: 1px solid #cecece;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn-update {
+  background-color: #b9d7ea;
+  color: #ffffff;
+}
+
+.btn-delete {
+  background-color: #F08080;
+  color: #ffffff;
+}
+
+.item-buttons {
+  display: flex;
+  justify-content: space-around;
+}

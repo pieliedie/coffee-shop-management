@@ -1,4 +1,10 @@
 <section>
-  <h2><a href='#'>{{item.itemName}}</a></h2>
-  <h4>{{item.price}}</h4>
+  <h3>{{item.itemName | titlecase}}</h3>
+  <h5>{{item.price | currency:'VND'}}</h5>
+  <div class="item-buttons">
+    <a [routerLink]="['update', item.id]">
+      <button class="btn btn-update">Update</button>
+    </a>
+    <button class="btn btn-delete">Delete</button>
+  </div>
 </section>

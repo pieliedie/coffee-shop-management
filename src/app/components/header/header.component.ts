@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
     title: string = "this is the header";
-    navigationItems: Array<string> = ['Home', 'Menu'];
+    navigationItems: Array<Object> = [
+      {
+        path: 'home',
+        name: 'Home'
+      },
+      {
+        path: 'products',
+        name: 'Menu'
+      }
+    ];
     ngOnInit(){}
 }
