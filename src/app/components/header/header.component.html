@@ -1,5 +1,6 @@
 <div class="header">
-  <div class="logo">{{ title }}</div>
+  <img src="../../../assets/images/angular.png" width="40px" height="40px"/>
+  <!-- <div class="logo"></div> -->
   <nav class="app-navigator">
       <ul *ngFor='let item of navigationItems'>
         <li>
@@ -10,7 +11,7 @@
   <div class="btn-row">
     <div ><a routerLink='/signin'>Sign in</a></div>
     <a routerLink='/new'>
-      <button class="btn btn-add btn-outline-light">Add Product</button>
+      <button class="btn btn-add btn-outline-light" [appHightlight]='gray'>Add Product</button>
     </a>
   </div>
 </div>

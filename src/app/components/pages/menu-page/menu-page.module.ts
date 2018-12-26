@@ -4,17 +4,20 @@ import { MenuItemComponent } from './menu-item/menu-item.component';
 import { MenuPageComponent } from './menu-page.component';
 import { FilterItemsComponent } from './filter-items/filter-items.component';
 import { MenuPageRoutingModule } from './menu-page-routing.module';
+import { FormsModule } from '@angular/forms';
+import { DirectivesModule } from 'src/app/core/directives/directives.module';
 
 @NgModule({
   declarations: [
     MenuItemComponent,
     MenuPageComponent,
-    FilterItemsComponent,
-    
+    FilterItemsComponent
   ],
   imports: [
     CommonModule,
-    MenuPageRoutingModule
+    MenuPageRoutingModule,
+    FormsModule,
+    DirectivesModule
   ],
   exports: [
     MenuPageComponent

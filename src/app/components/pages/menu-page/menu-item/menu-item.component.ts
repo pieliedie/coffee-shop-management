@@ -9,10 +9,13 @@ export class MenuItemComponent implements OnInit {
 
   @Input() item: Object = {};
   @Output() deleteItem: EventEmitter<number> = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
-    console.log(this.item);
   }
 
+  onRemovingItem(itemId: number) {    
+    this.deleteItem.emit(itemId);
+  }
 }

@@ -1,7 +1,7 @@
-<app-filter-items></app-filter-items>
+<app-filter-items (filterItems)='filterItems($event)'></app-filter-items>
 <div class="products-container">
-  <div *ngFor='let product of menu'>
-    <app-menu-item [item]='product' [deleteItem]='deleteItem'></app-menu-item>
+  <div *ngFor='let product of filteredItems'>
+    <app-menu-item [item]='product' (deleteItem)='deleteItem($event)'></app-menu-item>
   </div>
 </div>
   

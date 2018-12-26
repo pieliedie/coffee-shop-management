@@ -1,10 +1,11 @@
-<section>
-  <h3>{{item.itemName | titlecase}}</h3>
+<section [appHightlight]='gray'>
+  <h4>{{item.itemName | titlecase}}</h4>
   <h5>{{item.price | currency:'VND'}}</h5>
+  <h6>{{item.type | titlecase}}</h6>
   <div class="item-buttons">
     <a [routerLink]="['update', item.id]">
       <button class="btn btn-update">Update</button>
     </a>
-    <button class="btn btn-delete">Delete</button>
+    <button class="btn btn-delete" (click)="onRemovingItem(item.id)">Delete</button>
   </div>
 </section>

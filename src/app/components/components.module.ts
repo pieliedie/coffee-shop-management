@@ -9,6 +9,7 @@ import { AddEditPageModule } from './pages/add-edit-page/add-edit-page.module';
 import { RouterModule } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SignInPageComponent } from './pages/sign-in-page/sign-in-page.component';
+import { DirectivesModule } from '../core/directives/directives.module';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { SignInPageComponent } from './pages/sign-in-page/sign-in-page.component
       CommonModule,
       MenuPageModule,
       AddEditPageModule,
-      RouterModule
+      RouterModule,
+      DirectivesModule
     ],
     providers: [ItemService],
     exports: [

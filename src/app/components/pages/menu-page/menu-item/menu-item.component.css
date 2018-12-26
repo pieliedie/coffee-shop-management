@@ -3,6 +3,7 @@ section {
   border: 1px solid #cecece;
   padding: 10px;
   border-radius: 5px;
+  text-align: center;
 }
 
 .btn-update {

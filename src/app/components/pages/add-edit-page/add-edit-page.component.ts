@@ -17,6 +17,7 @@ export class AddEditPageComponent implements OnInit {
   });
 
   itemId: number;
+  items: Item[];
 
   constructor(
     private itemService: ItemService,
@@ -28,14 +29,19 @@ export class AddEditPageComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     
     if(id !== null) {
-      const item = this.itemService.loadItem(+id);
-      this.itemId = item.id;
-      this.productForm.setValue({
-        itemName: item.itemName,
-        price: item.price,
-        type: item.type
-      })
+      const item = this.itemService.loadItem(+id).subscribe(item => {
+        this.itemId = item.id;
+        this.productForm.setValue({
+          itemName: item.itemName,
+          price: item.price,
+          type: item.type
+        })
+      });
     }
+
+    this.itemService.loadItems().subscribe(items => {
+      this.items = items;
+    })
   }
 
   onSubmit() {
@@ -43,15 +49,20 @@ export class AddEditPageComponent implements OnInit {
       this.itemService.updateItem({
         id: this.itemId,
         ...this.productForm.value
+      }).subscribe( _ => {
+        console.log('Update successfully');
+        
+        this.itemId = null;
+        this.router.navigate(['/products']);
       })
-      this.itemId = null;
     }
     else {
       this.itemService.addItem({
-        id: Math.random() * 100,
+        id: this.items[this.items.length - 1].id + 1,
         ...this.productForm.value
+      }).subscribe( _ => {
+        this.router.navigate(['/products']);
       });
     }
-    this.router.navigate(['/products']);
   }
 }

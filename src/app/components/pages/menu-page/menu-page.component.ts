@@ -8,16 +8,39 @@ import { Item } from 'src/app/shared/interfaces';
   styleUrls: ['./menu-page.component.css']
 })
 export class MenuPageComponent implements OnInit {
-  menu: Array<Object> ;
+  menu: Item[] = [];
+  filteredItems: Item[] = [];
 
   constructor(private itemService: ItemService) { }
 
-  ngOnInit() {
-    this.menu = this.itemService.loadItems();
-    console.log(this.menu);
+  loadItems(): void {
+    this.itemService.loadItems()
+     .subscribe(items => {
+       this.menu = items;
+       this.filteredItems = items;
+     });
   }
 
-  deleteItem(item: Item): void {
-    this.itemService.removeItem(item);
+  ngOnInit() {
+    this.loadItems();
+  }
+
+  deleteItem(itemId: number): void {
+    this.itemService.removeItem(itemId).subscribe(_ => {
+      this.loadItems();
+    });
+  }
+
+  filterItems(data: string): void {
+    console.log(data);
+    
+    if (data) {
+      this.filteredItems = this.menu.filter((item: Item) => {
+          return item.itemName.toLowerCase().indexOf(data.toLowerCase()) > -1 ||
+                item.type.toLowerCase().indexOf(data.toLowerCase()) > -1
+      });
+    } else {
+      this.filteredItems = this.menu;
+    }
   }
 }
