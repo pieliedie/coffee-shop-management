@@ -1,5 +1,7 @@
 <div class="header">
-  <img src="../../../assets/images/angular.png" width="40px" height="40px"/>
+  <a routerLink="/home">
+    <img src="../../../assets/images/angular.png" width="40px" height="40px"/>
+  </a>
   <!-- <div class="logo"></div> -->
   <nav class="app-navigator">
       <ul *ngFor='let item of navigationItems'>
@@ -9,7 +11,15 @@
       </ul>
   </nav>
   <div class="btn-row">
-    <div ><a routerLink='/signin'>Sign in</a></div>
+    <div *ngIf="!isLoggedIn; else signout"><a routerLink='/signin'>Sign in</a></div>
+    <ng-template #signout>
+      <button 
+        class="btn btn-signout btn-outline-light"
+        (click)="handleSignout()"
+        [appHightlight]='gray'
+      >Sign out
+      </button>
+    </ng-template>
     <a routerLink='/new'>
       <button class="btn btn-add btn-outline-light" [appHightlight]='gray'>Add Product</button>
     </a>

@@ -6,6 +6,7 @@ import { FilterItemsComponent } from './filter-items/filter-items.component';
 import { MenuPageRoutingModule } from './menu-page-routing.module';
 import { FormsModule } from '@angular/forms';
 import { DirectivesModule } from 'src/app/core/directives/directives.module';
+import { AuthGuard } from 'src/app/core/guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,9 @@ import { DirectivesModule } from 'src/app/core/directives/directives.module';
     MenuPageRoutingModule,
     FormsModule,
     DirectivesModule
+  ],
+  providers: [
+    AuthGuard
   ],
   exports: [
     MenuPageComponent

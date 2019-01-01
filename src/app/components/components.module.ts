@@ -8,23 +8,23 @@ import { ItemService } from '../core/services/item.service';
 import { AddEditPageModule } from './pages/add-edit-page/add-edit-page.module';
 import { RouterModule } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { SignInPageComponent } from './pages/sign-in-page/sign-in-page.component';
 import { DirectivesModule } from '../core/directives/directives.module';
+import { LoginPageModule } from './pages/login-page/login-page.module';
 
 @NgModule({
     declarations: [
       HeaderComponent,
       FooterComponent,
       DetailsPageComponent,
-      HomePageComponent,
-      SignInPageComponent
+      HomePageComponent
     ],
     imports: [
       CommonModule,
       MenuPageModule,
       AddEditPageModule,
       RouterModule,
-      DirectivesModule
+      DirectivesModule,
+      LoginPageModule
     ],
     providers: [ItemService],
     exports: [

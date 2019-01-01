@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuPageComponent } from './menu-page.component';
-import { AddEditPageComponent } from '../add-edit-page/add-edit-page.component';
+import { AuthGuard } from 'src/app/core/guards/auth.guard';
 
 const routes: Routes = [
-  { path: 'products', component: MenuPageComponent},
-  { path: 'update/:id', component: AddEditPageComponent}
+  { path: 'products', component: MenuPageComponent, canActivate: [AuthGuard]}
 ]
 
 @NgModule({
